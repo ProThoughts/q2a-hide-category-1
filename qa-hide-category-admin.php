@@ -10,9 +10,9 @@ class qa_hide_category_admin {
 
 		switch($option) {
 			case 'hide-plugin-text':
-				return 'Hide Politics category by Default';
+				return 'Hide category by Default';
 			case 'hide-plugin-title':
-				return 'Hide Politics';
+				return 'Hide category';
 			case 'hide-plugin-css':
 				return '.hide { text-align:center;}';
 			default:
