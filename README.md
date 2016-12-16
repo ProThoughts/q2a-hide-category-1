@@ -1,4 +1,4 @@
-# Q2A Category Hide
+# Q2A Hide Category
 
 Allows users to hide a category by default on question lists for Question2Answer. A toggle button allows to Hide/Show a category.
 
