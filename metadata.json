@@ -1,7 +1,7 @@
 {
   "name": "Q2A Hide Category",
-  "uri": "https://github.com/bluegenel/q2a-categoryhide",
-  "description": "Allows users to hide a category by default ",
+  "uri": "https://github.com/bluegenel/q2a-hide-category",
+  "description": "Allows users to hide a category by default",
   "version": "1.0",
   "date": "2016-12-16",
   "author": "Richard Hulston",
