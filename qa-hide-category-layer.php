@@ -16,7 +16,7 @@ class qa_html_theme_layer extends qa_html_theme_base {
 		qa_html_theme_base::doctype();
 	}
 
-	//change category id and slug, look up in admin category
+	//change category id, look up in admin category
 	function q_list_items($q_items)
 	{
 		$userid=qa_get_logged_in_userid();
