@@ -20,32 +20,19 @@ class qa_html_theme_layer extends qa_html_theme_base {
 	function q_list_items($q_items)
 	{
 		$userid=qa_get_logged_in_userid();
-			if (isset($userid)){
 				require_once QA_INCLUDE_DIR . 'db/metas.php';
 				if(qa_db_usermeta_get($userid, 'hide') == "1") {
-			{
-			foreach ($q_items as $q_item){
-			// change category id which is 28 in this example
-			if($q_item['raw']['categoryid'] != 28) {
-			$this->q_list_item($q_item);
-			}
-			$_SERVER['REQUEST_URI_PATH'] = parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH);
-			$urlPart= explode('/', $_SERVER['REQUEST_URI_PATH']);
-			//change politics to a category you want to hide
-			if($urlPart[1]=="politics")
-			$this->q_list_item($q_item);
-			if(array_key_exists(2,$urlPart)){
-			//change politics to a category you want to hide
-			if($urlPart[2]=="politics")
-			$this->q_list_item($q_item);
-			}
-		} 
+		foreach ($q_items as $q_item){
+		if($q_item['raw']['categoryid'] != 28) {
+		$this->q_list_item($q_item);
+		}
+		}
+		}
+		else {
+		qa_html_theme_base::q_list_items($q_items);
+		}
 	}
-	}
-	}
-	qa_html_theme_base::q_list_items($q_items);
-	}
-
+	
 	function hide_form() {
 		if($handle = qa_get_logged_in_handle()) {
 			require_once QA_INCLUDE_DIR . 'db/metas.php';
