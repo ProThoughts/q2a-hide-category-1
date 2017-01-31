@@ -34,6 +34,8 @@ class qa_html_theme_layer extends qa_html_theme_base {
 	}
 	
 	function hide_form() {
+		//un comment for permissions level
+		//if ( qa_get_logged_in_level() >= QA_USER_LEVEL_EXPERT ) {
 		if($handle = qa_get_logged_in_handle()) {
 			require_once QA_INCLUDE_DIR . 'db/metas.php';
 			$userid = qa_get_logged_in_userid();
@@ -44,11 +46,11 @@ class qa_html_theme_layer extends qa_html_theme_base {
 				else {
 					qa_db_usermeta_set($userid, 'hide', "0") ;
 				}
-
-				qa_redirect($this->request,array('ok'=>qa_lang_html('admin/options_saved')));
+				$ok = 'Category Options Saved.';
+				//qa_redirect($this->request,array('ok'=>qa_lang_html('admin/options_saved')));
 			}
 
-			$ok = qa_get('ok')?qa_get('ok'):null;
+			//$ok = qa_get('ok')?qa_get('ok'):null;
 
 			$fields = array();
 			$fields['hide'] = array(
@@ -79,6 +81,8 @@ class qa_html_theme_layer extends qa_html_theme_base {
 			return $form;
 
 		}
+		//uncommen t for permissions level
+		//}
 	}
 
 }
