@@ -23,8 +23,6 @@ class qa_hide_category_admin
 
 	function admin_form(&$qa_content)
 	{
-		//	Process form input
-
 		$ok = null;
 		if (qa_clicked('hide_save_button')) {
 			foreach ($_POST as $i => $v) {
